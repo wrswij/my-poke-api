@@ -13,6 +13,6 @@ export class PokemonService {
   constructor(private http: HttpClient) { }
 
   getPokemon(): Observable<IPokemon[]>{
-    return this.http.get<IPokemon[]>(environment.baseApiUrl);
+    return this.http.get<IPokemon[]>(environment.baseApiUrl, { headers: new HttpHeaders().set("x-api-key","5f12c666ca3a672eecc240dc")});
   }
 }

@@ -1,15 +1,17 @@
 export interface IPokemon
 {
-  name: string;
-  type1: string;
-  type2: string;
-  total: number;
-  hp: number;
-  attack: number;
-  defence: number;
-  spatk: number;
-  spdef: number;
-  speed: number;
-  generation: number;
-  legendary: string;
+  _id: string;
+  Number: number;
+  Name: string;
+  Total: number;
+  HP: number;
+  Attack: number;
+  Defence: number;
+  Speed: number;
+  Generation: number;
+  Legendary: string;
+  Type1: string;
+  Type2: string;
+  SpAtk: number;
+  SpDef: number;
 }
