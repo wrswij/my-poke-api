@@ -22,5 +22,4 @@ export class OverviewComponent implements OnInit {
       (data) => this.pokemons = data
     )
   }
-
 }
