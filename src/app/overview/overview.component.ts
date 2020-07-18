@@ -7,10 +7,10 @@ import { MatTable } from '@angular/material/table';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.css'],
+  styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent implements OnInit {
-  displayedColumns: string[] = ['Name'];
+  displayedColumns: string[] = ['name','number','type1'];
   dataSource = new MatTableDataSource<IPokemon>();
 
   @ViewChild(MatTable) table: MatTable<any>;
@@ -28,5 +28,10 @@ export class OverviewComponent implements OnInit {
     this.pokemonService
       .getPokemon()
       .subscribe((data) => (this.dataSource.data = data));
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
